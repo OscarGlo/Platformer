@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100, 5 )
+
+[node name="Wall" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -100.0
+margin_top = -5.0
+margin_right = 100.0
+margin_bottom = 5.0
+color = Color( 0.588235, 0.588235, 0.588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
