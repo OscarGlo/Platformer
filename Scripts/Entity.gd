@@ -12,7 +12,7 @@ const floor_friction = 0.85
 var speed = Vector2.ZERO
 var snap = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_on_floor():
 		speed.x *= floor_friction
 		# Reduce speed to minimum
