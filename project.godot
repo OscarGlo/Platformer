@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
+}, {
+"base": "ReferenceRect",
+"class": "_Room",
+"language": "GDScript",
+"path": "res://Scripts/Room.gd"
 } ]
 _global_script_class_icons={
 "BufferTimer": "",
 "Entity": "",
-"Player": ""
+"Player": "",
+"_Room": ""
 }
 
 [application]
@@ -40,6 +46,7 @@ config/icon="res://icon.png"
 
 TilesetGen="*res://Scripts/TilesetGen.gd"
 FileUtil="*res://Scripts/FileUtil.gd"
+VectorUtil="*res://Scripts/VectorUtil.gd"
 
 [display]
 
