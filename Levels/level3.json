@@ -1,0 +1,31 @@
+{
+    "name": "hihi3",
+	"worlds": [
+        {
+            "rooms": [
+                {
+                    "pos": [0, 0],
+                    "scale": 1,
+                    "size": [1, 1],
+                    "wrap": "horizontal",
+                    "blocked": "ud",
+                    "blocks": [
+                        "                ",
+                        "                ",
+                        "aaa          aaa",
+                        "                ",
+                        "                ",
+                        "                ",
+                        "aaaa        aaaa",
+                        "                ",
+                        "                "
+                    ],
+                    "entities": [
+                    	{"type": "player", "pos": [300, 300]},
+                        {"type": "exit", "pos": [600, 600]}
+                    ]
+                }
+            ]
+        }
+    ]
+}

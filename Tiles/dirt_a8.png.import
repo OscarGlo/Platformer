@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/dirt_a8.png-5bdc744f051e27b1074e3b525f07fd25.image"
+
+[deps]
+
+source_file="res://Tiles/dirt_a8.png"
+dest_files=[ "res://.import/dirt_a8.png-5bdc744f051e27b1074e3b525f07fd25.image" ]
+
+[params]
+

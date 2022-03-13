@@ -1,0 +1,39 @@
+{
+    "name": "hihi2",
+	"worlds": [
+        {
+            "rooms": [
+                {
+                    "pos": [0, 0],
+                    "scale": 2,
+                    "size": [3, 1],
+                    "wrap": "horizontal",
+                    "blocked": "l",
+                    "blocks": [
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                                                                                                                                                ",
+                        "                 aa                                                                   aaaaaa                                                    ",
+                        "                                            aaa                                                                                                 ",
+                        "                                                                         aaaa                  aaa                                              ",
+                        "      aaaa                    aa                                                                         aaa                                    ",
+                        "                                                       aaaaaaaaa                                                                                ",
+                        "           aaa                                                                                    aaaa                                          ",
+                        "   aaaaaaaaaaaaaaaaaaaa     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    ],
+                    "entities": [
+                    	{"type": "player", "pos": [1000, 1000]}
+                    ]
+                }
+            ]
+        }
+    ]
+}

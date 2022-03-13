@@ -1,0 +1,47 @@
+{
+    "name": "hihi",
+	"worlds": [
+        {
+            "rooms": [
+                {
+                    "pos": [0, 0],
+                    "scale": 3,
+                    "size": [1, 1],
+                    "blocked": "lr",
+                    "blocks": [
+                        "                                                ",
+                        "        aaaaaaa aaaaaaa aaaaaaa aaaaaaa         ",
+                        "           a    a       a          a            ",
+                        "           a    aaaa    aaaaaaa    a            ",
+                        "           a    a             a    a            ",
+                        "           a    aaaaaaa aaaaaaa    a            ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "     a                                          ",
+                        "     aa                                         ",
+                        "      aaaaaaaa                                  ",
+                        "                                                ",
+                        "                                                ",
+                        "                                                ",
+                        "                 aaaaaaaaaa                     ",
+                        "                    aaaa                        ",
+                        "                                  aaaaaaaaa     ",
+                        "aa                                            aa",
+                        "aa                                            aa",
+                        "aa                                            aa",
+                        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    ],
+                    "entities": [
+                        {"type": "player", "pos": [100, 1500]}
+                    ]
+                }
+            ]
+        }
+    ]
+}

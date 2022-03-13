@@ -1,8 +1,8 @@
 class_name Player
-extends Entity
+extends LivingEntity
 
-const move_speed = 500
-var jump_force = gravity * 12
+const move_speed = 1500
+var jump_force = gravity * 10
 
 var coyote = BufferTimer.new().with_time(0.05)
 var jump_buf = BufferTimer.new().with_time(0.1)
@@ -22,13 +22,24 @@ func update_horizontal_movement():
 		direction += 1
 	
 	if direction != 0:
-		if is_on_floor():
-			speed.x = direction * move_speed
-		else:
-			# Add speed incrementally so that max speed is move_speed
-			speed.x += direction * move_speed * (1 - air_friction)
+		# Add speed incrementally so that max speed is move_speed
+		speed.x += direction * move_speed * (1 - (floor_friction if body.is_on_floor() else air_friction))
 
 func update_jump(_delta):
+	# Set timers
+	if body.is_on_floor():
+		coyote.start()
+	
+	if body.is_on_ceiling():
+		speed.y = 0
+		jump_hold.stop()
+		
+	if jump_hold.running() and not Input.is_action_pressed("ui_up"):
+		jump_hold.stop()
+	
+	if Input.is_action_just_pressed("ui_up"):
+		jump_buf.start()
+	
 	# Jump
 	if (jump_buf.running() and coyote.running()) or (jump_hold.running() and Input.is_action_pressed("ui_up")):
 		speed.y = -jump_force
@@ -38,23 +49,7 @@ func update_jump(_delta):
 			coyote.stop()
 			# Set hold timer on jump start
 			jump_hold.start()
-	
-	# Set timers
-	if is_on_floor():
-		coyote.start()
-	
-	if is_on_ceiling():
-		speed.y = 0
-		jump_hold.stop()
-	
-	if Input.is_action_just_pressed("ui_up"):
-		jump_buf.start()
 
 func _physics_process(delta):
 	update_horizontal_movement()
 	update_jump(delta)
-	
-	# Wrap position
-	var height = get_viewport_rect().size.y
-	if position.y > height:
-		position.y -= height
