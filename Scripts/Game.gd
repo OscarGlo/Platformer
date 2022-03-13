@@ -68,4 +68,8 @@ func _process(_delta):
 		death()
 	
 	if Input.is_action_just_pressed("ui_esc"):
-		toggle_pause()
+		if death_screen or win_screen:
+			get_tree().change_scene("res://Scenes/GUI/LevelMenu.tscn")
+			get_tree().paused = false
+		else:
+			toggle_pause()
