@@ -7,7 +7,7 @@
                     "pos": [0, 0],
                     "scale": 3,
                     "size": [1, 1],
-                    "blocked": "lr",
+                    "blocked": "ur",
                     "blocks": [
                         "                                                ",
                         "        aaaaaaa aaaaaaa aaaaaaa aaaaaaa         ",
@@ -38,7 +38,36 @@
                         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                     ],
                     "entities": [
-                        {"type": "player", "pos": [100, 1500]}
+                        {"type": "player", "pos": [1, 22]}
+                    ]
+                },
+                {
+                    "pos": [-2, 1],
+                    "scale": 2,
+                    "size": [1, 1],
+                    "blocked": "udl",
+                    "blocks": [
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "  a   a   a   a   a   a   a   a ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "                                ",
+                        "aaaaaaaa                        "
+                    ],
+                    "entities": [
+                        {"type": "exit", "pos": [3, 16]}
                     ]
                 }
             ]

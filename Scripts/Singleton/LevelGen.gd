@@ -58,10 +58,13 @@ func parse_room(d: Dictionary, world: _World) -> _Room:
 		for x in len(row):
 			var c = row[x]
 			if c in TILE_CHARS:
-				world.set_block(Vector2(x, y), TILE_CHARS[c])
+				world.set_block(Vector2(x, y) + room.rect_position, TILE_CHARS[c])
 	
 	for entity in d["entities"]:
-		world.add_entity(parse_entity(entity))
+		var node = parse_entity(entity)
+		node.position += room.rect_position
+		print(node.position)
+		world.add_entity(node)
 	
 	return room
 
@@ -73,5 +76,5 @@ const ENTITY_SCENES = {
 
 func parse_entity(d: Dictionary):
 	var entity: Entity = ENTITY_SCENES[d["type"]].instance()
-	entity.position = VectorUtil.from_arr(d["pos"])
+	entity.position = VectorUtil.tile_to_pos(VectorUtil.from_arr(d["pos"]))
 	return entity

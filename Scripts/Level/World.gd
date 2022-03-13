@@ -1,6 +1,8 @@
 class_name _World
 extends Node2D
 
+const TILEMAP_SCALE = 0.625
+
 var level: Level
 var die_out_of_bounds = true
 
@@ -11,7 +13,6 @@ func add_room(room: ReferenceRect):
 	$Rooms.add_child(room)
 
 func add_entity(entity: Entity):
-	print(entity)
 	$Entities.add_child(entity)
 	
 	if entity is Player:

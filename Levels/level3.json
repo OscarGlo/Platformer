@@ -21,8 +21,8 @@
                         "                "
                     ],
                     "entities": [
-                    	{"type": "player", "pos": [300, 300]},
-                        {"type": "exit", "pos": [600, 600]}
+                    	{"type": "player", "pos": [1, 1]},
+                        {"type": "exit", "pos": [14, 1]}
                     ]
                 }
             ]

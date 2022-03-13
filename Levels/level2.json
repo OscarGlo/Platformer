@@ -30,7 +30,7 @@
                         "   aaaaaaaaaaaaaaaaaaaa     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                     ],
                     "entities": [
-                    	{"type": "player", "pos": [1000, 1000]}
+                    	{"type": "player", "pos": [12, 15]}
                     ]
                 }
             ]
