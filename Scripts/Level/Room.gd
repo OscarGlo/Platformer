@@ -2,6 +2,7 @@ tool
 class_name _Room
 extends ReferenceRect
 
+# TODO: Move to global settings script?
 var window_size = Vector2(
 	ProjectSettings.get("display/window/size/width"),
 	ProjectSettings.get("display/window/size/height")

@@ -53,12 +53,14 @@ func parse_room(d: Dictionary, world: _World) -> _Room:
 		for c in d["blocked"]:
 			room.blocked[DIR_MAP[c]] = true
 	
+	var offset = VectorUtil.pos_to_tile(room.rect_position)
+	print(offset)
 	for y in len(d["blocks"]):
 		var row = d["blocks"][y]
 		for x in len(row):
 			var c = row[x]
 			if c in TILE_CHARS:
-				world.set_block(Vector2(x, y) + room.rect_position, TILE_CHARS[c])
+				world.set_block(Vector2(x, y) + offset, TILE_CHARS[c])
 	
 	for entity in d["entities"]:
 		var node = parse_entity(entity)

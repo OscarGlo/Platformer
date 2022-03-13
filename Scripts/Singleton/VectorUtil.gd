@@ -8,6 +8,9 @@ func tile_to_pos(tile: Vector2, center = true) -> Vector2:
 	var offset = (Vector2.ONE / 2) if center else Vector2.ZERO
 	return (tile + offset) * TilesetGen.TILE_SIZE * _World.TILEMAP_SCALE
 
+func pos_to_tile(pos: Vector2) -> Vector2:
+	return (pos / (TilesetGen.TILE_SIZE * _World.TILEMAP_SCALE)).floor()
+
 func is_in(v: Vector2, pos: Vector2, size: Vector2) -> bool:
 	var end = pos + size
 	return v.x >= pos.x and v.y >= pos.y and v.x <= end.x and v.y <= end.y
