@@ -89,6 +89,10 @@ window/size/height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/todo/plugin.cfg" )
+
 [input]
 
 ui_accept={

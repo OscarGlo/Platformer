@@ -23,3 +23,13 @@ text = "Pause"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 11.0
+margin_top = 8.0
+margin_right = 156.0
+margin_bottom = 22.0
+text = "0:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}

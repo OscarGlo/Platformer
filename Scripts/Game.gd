@@ -5,6 +5,8 @@ var level: Level
 var world: _World
 var player: Player setget set_player
 
+var time = 0
+
 func set_player(p):
 	player = p
 	$Camera.follow = player
@@ -63,7 +65,10 @@ func on_level_end():
 	win_screen = WIN_SCREEN.instance()
 	$CanvasLayer.add_child(win_screen)
 
-func _process(_delta):
+func _process(delta):
+	time += delta
+	$CanvasLayer/Label.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
+	
 	if RoomUtil.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
 		death()
 	
