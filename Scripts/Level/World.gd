@@ -17,5 +17,9 @@ func add_entity(entity: Entity):
 	
 	if entity is Player:
 		level.player = entity
-	if entity is Exit:
-		level.exit = entity
+
+func get_room_at_pos(pos) -> ReferenceRect:
+	for r in $Rooms.get_children():
+		if VectorUtil.is_in(pos, r.rect_position, r.rect_size):
+			return r
+	return null

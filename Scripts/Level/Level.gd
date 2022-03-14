@@ -3,4 +3,3 @@ extends Node
 
 var worlds = []
 var player: Player
-var exit: Exit

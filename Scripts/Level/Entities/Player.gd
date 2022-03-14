@@ -6,7 +6,7 @@ var jump_force = gravity * 10
 
 var coyote = BufferTimer.new().with_time(0.05)
 var jump_buf = BufferTimer.new().with_time(0.1)
-var jump_hold = BufferTimer.new().with_time(0.15)
+var jump_hold = BufferTimer.new().with_time(0.2)
 
 func _ready():
 	snap = 8

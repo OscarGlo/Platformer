@@ -54,7 +54,6 @@ func parse_room(d: Dictionary, world: _World) -> _Room:
 			room.blocked[DIR_MAP[c]] = true
 	
 	var offset = VectorUtil.pos_to_tile(room.rect_position)
-	print(offset)
 	for y in len(d["blocks"]):
 		var row = d["blocks"][y]
 		for x in len(row):
@@ -65,7 +64,6 @@ func parse_room(d: Dictionary, world: _World) -> _Room:
 	for entity in d["entities"]:
 		var node = parse_entity(entity)
 		node.position += room.rect_position
-		print(node.position)
 		world.add_entity(node)
 	
 	return room

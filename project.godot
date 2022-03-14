@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Level/Entities/Exit.gd"
 }, {
+"base": "Node2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Scripts/Game.gd"
+}, {
 "base": "Node",
 "class": "Level",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "BufferTimer": "",
 "Entity": "",
 "Exit": "",
+"Game": "",
 "Level": "",
 "LevelButton": "",
 "LivingEntity": "",
@@ -81,6 +87,7 @@ RoomUtil="*res://Scripts/Singleton/RoomUtil.gd"
 StringUtil="*res://Scripts/Singleton/StringUtil.gd"
 LevelGen="*res://Scripts/Singleton/LevelGen.gd"
 LevelInfo="*res://Scripts/Singleton/LevelInfo.gd"
+GameUtil="*res://Scripts/Singleton/GameUtil.gd"
 
 [display]
 

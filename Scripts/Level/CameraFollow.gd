@@ -9,7 +9,7 @@ func _process(_delta):
 
 func follow_constrained():
 	if follow:
-		var room = RoomUtil.get_room_at_pos(follow.position)
+		var room = GameUtil.game.world.get_room_at_pos(follow.position)
 		
 		# Follow node
 		if room or follow_out_of_bounds:

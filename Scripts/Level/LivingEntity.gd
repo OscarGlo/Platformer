@@ -45,6 +45,6 @@ func _physics_process(_delta):
 		speed *= Vector2(air_friction, air_resistance)
 	
 	# Get current room before move
-	var room = RoomUtil.get_room_at_pos(position)
+	var room = GameUtil.game.world.get_room_at_pos(position)
 	body.move_and_slide_with_snap(speed, Vector2.DOWN * snap, up_dir)
 	wrap_position(room)

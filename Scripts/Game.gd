@@ -1,3 +1,4 @@
+class_name Game
 extends Node2D
 
 var level_path = "res://Levels/level.json"
@@ -12,6 +13,9 @@ func set_player(p):
 	$Camera.follow = player
 
 func _ready():
+	# Register instance
+	GameUtil.game = self
+	
 	if LevelInfo.level_path:
 		level_path = LevelInfo.level_path
 	
@@ -21,10 +25,6 @@ func _ready():
 	set_player(level.player)
 	world = level.worlds[0]
 	add_child(world)
-	RoomUtil.rooms = $World/Rooms.get_children()
-	
-	if level.exit:
-		level.exit.connect("level_end", self, "on_level_end")
 	
 	var tileset = TileSet.new()
 	TilesetGen.generate("res://Tiles/dirt_a8.png", tileset)
@@ -69,7 +69,7 @@ func _process(delta):
 	time += delta
 	$CanvasLayer/Label.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
 	
-	if RoomUtil.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
+	if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
 		death()
 	
 	if Input.is_action_just_pressed("ui_esc"):

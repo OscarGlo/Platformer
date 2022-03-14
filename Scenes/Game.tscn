@@ -33,3 +33,12 @@ text = "0:00"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Debug" type="Label" parent="CanvasLayer"]
+margin_left = 9.0
+margin_top = 410.0
+margin_right = 233.0
+margin_bottom = 711.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
