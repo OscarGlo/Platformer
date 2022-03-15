@@ -8,7 +8,7 @@ script/source = "extends Button
 "
 
 [node name="PauseScreen" type="Node2D"]
-position = Vector2( 640, 360 )
+position = Vector2( 960, 540 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -100.0

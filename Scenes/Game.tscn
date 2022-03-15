@@ -15,10 +15,10 @@ script = ExtResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseButton" type="Button" parent="CanvasLayer"]
-margin_left = 1218.0
-margin_top = 12.0
-margin_right = 1266.0
-margin_bottom = 32.0
+margin_left = 1856.0
+margin_top = 13.0
+margin_right = 1906.0
+margin_bottom = 33.0
 text = "Pause"
 __meta__ = {
 "_edit_use_anchors_": false

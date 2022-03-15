@@ -1,7 +1,7 @@
 class_name _World
 extends Node2D
 
-const TILEMAP_SCALE = 0.625
+const TILEMAP_SCALE = 0.9375
 
 var level: Level
 var die_out_of_bounds = true
@@ -23,3 +23,6 @@ func get_room_at_pos(pos) -> ReferenceRect:
 		if VectorUtil.is_in(pos, r.rect_position, r.rect_size):
 			return r
 	return null
+
+func _ready():
+	$TileMap.scale = TILEMAP_SCALE * Vector2.ONE

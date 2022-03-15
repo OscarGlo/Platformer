@@ -91,8 +91,8 @@ GameUtil="*res://Scripts/Singleton/GameUtil.gd"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -119,7 +119,7 @@ ui_esc={
 [physics]
 
 common/enable_pause_aware_picking=true
-2d/default_gravity=250
+2d/default_gravity=400
 
 [rendering]
 

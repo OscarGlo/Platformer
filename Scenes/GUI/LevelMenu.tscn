@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/GUI/MenuButton.gd" type="Script" id=2]
 
 [node name="LevelMenu" type="Node2D"]
-position = Vector2( 640, 360 )
+position = Vector2( 960, 540 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
@@ -30,10 +30,10 @@ rect_min_size = Vector2( 400, 0 )
 alignment = 1
 
 [node name="Button" type="Button" parent="."]
-margin_left = 580.0
-margin_top = -350.0
-margin_right = 628.0
-margin_bottom = -330.0
+margin_left = 897.0
+margin_top = -525.0
+margin_right = 945.0
+margin_bottom = -505.0
 text = "Back"
 script = ExtResource( 2 )
 __meta__ = {

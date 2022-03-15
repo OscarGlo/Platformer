@@ -1,7 +1,7 @@
 class_name Player
 extends LivingEntity
 
-const move_speed = 1500
+const move_speed = 2300
 var jump_force = gravity * 10
 
 var coyote = BufferTimer.new().with_time(0.05)

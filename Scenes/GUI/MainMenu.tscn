@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/GUI/MainMenu.gd" type="Script" id=2]
 
 [node name="MainMenu" type="Node2D"]
-position = Vector2( 640, 360 )
+position = Vector2( 960, 540 )
 script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
