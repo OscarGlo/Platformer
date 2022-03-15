@@ -19,7 +19,7 @@ func follow_constrained():
 		if room:
 			zoom = Vector2.ONE * room.scale
 			
-			var size = room.scale * get_viewport().size / 2
+			var size = room.scale * room.window_size / 2
 			var start_offset = (position - size) - room.rect_position
 			var end_offset = room.rect_position + room.rect_size - (position + size)
 			
