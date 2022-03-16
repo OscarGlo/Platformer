@@ -9,3 +9,5 @@ func on_press():
 	if scene_path:
 		get_tree().change_scene(scene_path)
 		get_tree().paused = false
+		
+		GameUtil.game = null

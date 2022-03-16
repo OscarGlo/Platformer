@@ -26,11 +26,9 @@ func parse_world(d: Dictionary, level: Level) -> _World:
 	return world
 
 
-enum TileType {
-	GROUND
-}
+enum { GROUND }
 const TILE_CHARS = {
-	"a": TileType.GROUND
+	"a": GROUND
 }
 const ROOM_SCENE = preload("res://Scenes/Room.tscn")
 

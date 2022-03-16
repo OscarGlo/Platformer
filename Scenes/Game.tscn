@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Level/CameraFollow.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Level/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
 
 [node name="Game" type="Node2D"]

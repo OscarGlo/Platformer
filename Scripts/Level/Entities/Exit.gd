@@ -8,4 +8,4 @@ func _ready():
 
 func on_body_entered(body: Node2D):
 	if body is Player:
-		GameUtil.game.death()
+		GameUtil.game.win()

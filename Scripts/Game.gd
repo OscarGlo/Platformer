@@ -6,7 +6,15 @@ var level: Level
 var world: _World
 var player: Player setget set_player
 
+var mode = GameUtil.PLAY
+
 var time = 0
+
+const PAUSE_SCREEN = preload("res://Scenes/GUI/PauseScreen.tscn")
+var pause_menu
+
+const EDIT_MENU = preload("res://Scenes/GUI/EditMenu.tscn")
+var edit_menu
 
 func set_player(p):
 	player = p
@@ -16,8 +24,16 @@ func _ready():
 	# Register instance
 	GameUtil.game = self
 	
-	if LevelInfo.level_path:
-		level_path = LevelInfo.level_path
+	# Get info from menus
+	level_path = LevelInfo.level_path
+	mode = LevelInfo.mode
+	
+	# Initialize menus
+	pause_menu = PAUSE_SCREEN.instance()
+	pause_menu.get_node("VBoxContainer/Continue").connect("pressed", self, "toggle_pause")
+	
+	edit_menu = EDIT_MENU.instance()
+	edit_menu.get_node("VBoxContainer/Back").connect("pressed", self, "toggle_pause")
 	
 	$CanvasLayer/PauseButton.connect("pressed", self, "toggle_pause")
 	
@@ -26,28 +42,23 @@ func _ready():
 	world = level.worlds[0]
 	add_child(world)
 	
+	$Camera.init()
+	
 	var tileset = TileSet.new()
 	TilesetGen.generate("res://Tiles/dirt_a8.png", tileset)
 	$World/TileMap.tile_set = tileset
 	$World/TileMap.update_bitmask_region()
-
-const PAUSE_SCREEN = preload("res://Scenes/GUI/PauseScreen.tscn")
-var pause_menu
 
 func toggle_pause():
 	if death_screen or win_screen:
 		return
 	
 	get_tree().paused = not get_tree().paused
+	var menu = pause_menu if mode == GameUtil.PLAY else edit_menu
 	if get_tree().paused:
-		# TODO: Initialize pause menu in ready
-		if not pause_menu:
-			pause_menu = PAUSE_SCREEN.instance()
-			# Connect continue button
-			pause_menu.get_node("VBoxContainer/Continue").connect("pressed", self, "toggle_pause")
-		$CanvasLayer.add_child(pause_menu)
+		$CanvasLayer.add_child(menu)
 	else:
-		$CanvasLayer.remove_child(pause_menu)
+		$CanvasLayer.remove_child(menu)
 
 const DEATH_SCREEN = preload("res://Scenes/GUI/DeathScreen.tscn")
 var death_screen
@@ -60,21 +71,25 @@ func death():
 const WIN_SCREEN = preload("res://Scenes/GUI/WinScreen.tscn")
 var win_screen
 
-func on_level_end():
+func win():
 	get_tree().paused = true
 	win_screen = WIN_SCREEN.instance()
 	$CanvasLayer.add_child(win_screen)
 
 func _process(delta):
-	time += delta
-	$CanvasLayer/Label.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
+	if mode == GameUtil.PLAY:
+		time += delta
+		$CanvasLayer/Label.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
+		
+		if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
+			death()
+	else:
+		pass
 	
-	if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
-		death()
-	
-	if Input.is_action_just_pressed("ui_esc"):
+	if Input.is_action_just_pressed("esc"):
 		if death_screen or win_screen:
 			get_tree().change_scene("res://Scenes/GUI/LevelMenu.tscn")
 			get_tree().paused = false
+			GameUtil.game = null
 		else:
 			toggle_pause()

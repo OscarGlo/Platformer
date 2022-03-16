@@ -48,6 +48,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scene_path = "res://Scenes/GUI/LevelMenu.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 margin_top = 81.0

@@ -35,6 +35,9 @@ func wrap_position(room: ReferenceRect):
 				position.y -= size.y
 
 func _physics_process(_delta):
+	if GameUtil.game.mode == GameUtil.EDIT:
+		return
+	
 	if body.is_on_floor():
 		speed.x *= floor_friction
 		# Reduce speed to minimum

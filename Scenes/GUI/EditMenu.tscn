@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GUI/MenuButton.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+"
+
+[node name="PauseScreen" type="Node2D"]
+position = Vector2( 960, 540 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -100.0
+margin_top = -60.0
+margin_right = 100.0
+margin_bottom = 60.0
+color = Color( 0.235294, 0.235294, 0.235294, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -60.0
+margin_right = 80.0
+margin_bottom = 60.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 160.0
+margin_bottom = 58.0
+text = "Back"
+script = SubResource( 1 )
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 160.0
+margin_bottom = 82.0
+text = "Exit"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_path = "res://Scenes/GUI/LevelMenu.tscn"
