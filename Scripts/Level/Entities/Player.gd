@@ -51,9 +51,6 @@ func update_jump(_delta):
 			jump_hold.start()
 
 func _physics_process(delta):
-	if GameUtil.game == null:
-		return
-	
-	if GameUtil.game.mode == GameUtil.PLAY:
+	if GameUtil.game != null and GameUtil.game.mode == GameUtil.PLAY:
 		update_horizontal_movement()
 		update_jump(delta)
