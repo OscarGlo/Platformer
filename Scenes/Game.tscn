@@ -24,7 +24,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Label" parent="CanvasLayer"]
+[node name="Play" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Label" parent="CanvasLayer/Play"]
 margin_left = 11.0
 margin_top = 8.0
 margin_right = 156.0
@@ -34,16 +41,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Debug" type="Label" parent="CanvasLayer"]
-margin_left = 9.0
-margin_top = 410.0
-margin_right = 233.0
-margin_bottom = 711.0
+[node name="Edit" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Hotbar" type="Control" parent="CanvasLayer"]
+[node name="Hotbar" type="Control" parent="CanvasLayer/Edit"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {

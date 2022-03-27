@@ -22,9 +22,8 @@ func set_player(p):
 
 func set_mode(m):
 	mode = m
-	$CanvasLayer/Timer.visible = mode == GameUtil.PLAY
-	$CanvasLayer/Hotbar.visible = mode == GameUtil.EDIT
-	print(mode)
+	$CanvasLayer/Play.visible = mode == GameUtil.PLAY
+	$CanvasLayer/Edit.visible = mode == GameUtil.EDIT
 
 func _ready():
 	# Register instance
@@ -87,7 +86,7 @@ func win():
 
 func process_play(delta):
 	time += delta
-	$CanvasLayer/Timer.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
+	$CanvasLayer/Play/Timer.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
 	
 	if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
 		death()
