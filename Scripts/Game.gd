@@ -92,7 +92,7 @@ func process_play(delta):
 	if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
 		death()
 
-func process_edit(delta):
+func process_edit(_delta):
 	pass
 
 func _process(delta):

@@ -1,8 +1,6 @@
 class_name Exit
 extends Entity
 
-signal level_end
-
 func _ready():
 	connect("body_entered", self, "on_body_entered")
 

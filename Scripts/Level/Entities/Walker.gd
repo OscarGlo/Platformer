@@ -7,7 +7,7 @@ func _ready():
 	snap = 8
 	kill_on_collide = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Bounce on walls
 	if $LeftRay.is_colliding() or $RightRay.is_colliding():
 		direction = -direction
