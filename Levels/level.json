@@ -38,7 +38,9 @@
                         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                     ],
                     "entities": [
-                        {"type": "player", "pos": [1, 22]}
+                        {"type": "player", "pos": [1, 22]},
+                        {"type": "walker", "pos": [20, 25]},
+                        {"type": "walker", "pos": [40, 21]}
                     ]
                 },
                 {

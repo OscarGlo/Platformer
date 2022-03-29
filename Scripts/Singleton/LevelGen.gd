@@ -69,7 +69,8 @@ func parse_room(d: Dictionary, world: _World) -> _Room:
 
 const ENTITY_SCENES = {
 	"player": preload("res://Scenes/Entities/Player.tscn"),
-	"exit": preload("res://Scenes/Entities/Exit.tscn")
+	"exit": preload("res://Scenes/Entities/Exit.tscn"),
+	"walker": preload("res://Scenes/Entities/Walker.tscn")
 }
 
 func parse_entity(d: Dictionary):
