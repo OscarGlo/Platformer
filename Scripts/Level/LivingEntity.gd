@@ -4,12 +4,12 @@ extends Entity
 signal collide(collider)
 
 var gravity = ProjectSettings.get("physics/2d/default_gravity")
-const up_dir = Vector2.UP
+var up_dir = Vector2.UP
 # Minimum y speed (to ensure is_on_floor() is set each frame)
-const epsilon = 1
-const air_resistance = 0.92
-const air_friction = 0.9
-const floor_friction = 0.7
+var epsilon = 1
+var air_resistance = 0.92
+var air_friction = 0.9
+var floor_friction = 0.7
 
 onready var body = self # KinematicBody
 
@@ -52,7 +52,10 @@ func _physics_process(_delta):
 	
 	# Get current room before move
 	var room = GameUtil.game.world.get_room_at_pos(position)
-	body.move_and_slide_with_snap(speed, Vector2.DOWN * snap, up_dir)
+	if snap:
+		body.move_and_slide_with_snap(speed, Vector2.DOWN * snap, up_dir)
+	else:
+		body.move_and_slide(speed, up_dir)
 	wrap_position(room)
 	
 	for i in body.get_slide_count():

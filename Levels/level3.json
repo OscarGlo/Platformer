@@ -22,7 +22,9 @@
                     ],
                     "entities": [
                     	{"type": "player", "pos": [1, 1]},
-                        {"type": "exit", "pos": [14, 1]}
+                        {"type": "exit", "pos": [14, 1]},
+                        {"type": "walker", "pos": [8, 8]},
+                        {"type": "bouncer", "pos": [8, 4]}
                     ]
                 }
             ]
