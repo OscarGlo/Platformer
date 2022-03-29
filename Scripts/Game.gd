@@ -85,8 +85,9 @@ func win():
 	$CanvasLayer.add_child(win_screen)
 
 func process_play(delta):
-	time += delta
-	$CanvasLayer/Play/Timer.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
+	if not get_tree().paused:
+		time += delta
+		$CanvasLayer/Play/Timer.text = str(int(time/60)).pad_zeros(2) + ":" + str(int(time) % 60).pad_zeros(2)
 	
 	if world.get_room_at_pos(player.position) == null and world.die_out_of_bounds and not death_screen:
 		death()
