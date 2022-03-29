@@ -5,6 +5,7 @@ var move_speed = 1000
 
 func _ready():
 	snap = 8
+	kill_on_collide = true
 
 func _physics_process(delta):
 	# Bounce on walls

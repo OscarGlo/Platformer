@@ -10,6 +10,10 @@ var jump_hold = BufferTimer.new().with_time(0.2)
 
 func _ready():
 	snap = 8
+	
+	connect("collide", self, "on_collide")
+	
+	# Instantiate timers
 	add_child(coyote)
 	add_child(jump_buf)
 	add_child(jump_hold)
@@ -54,3 +58,7 @@ func _physics_process(delta):
 	if GameUtil.game != null and GameUtil.game.mode == GameUtil.PLAY:
 		update_horizontal_movement()
 		update_jump(delta)
+
+func on_collide(collider):
+	if collider is LivingEntity and collider.kill_on_collide:
+		GameUtil.game.death()

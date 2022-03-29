@@ -1,6 +1,8 @@
 class_name LivingEntity
 extends Entity
 
+signal collide(collider)
+
 var gravity = ProjectSettings.get("physics/2d/default_gravity")
 const up_dir = Vector2.UP
 # Minimum y speed (to ensure is_on_floor() is set each frame)
@@ -13,6 +15,7 @@ onready var body = self # KinematicBody
 
 var speed = Vector2.ZERO
 var snap = 0
+var kill_on_collide = false
 
 func _ready():
 	assert(body is KinematicBody2D, "Living entities should be KinematicBodies")
@@ -51,3 +54,10 @@ func _physics_process(_delta):
 	var room = GameUtil.game.world.get_room_at_pos(position)
 	body.move_and_slide_with_snap(speed, Vector2.DOWN * snap, up_dir)
 	wrap_position(room)
+	
+	for i in body.get_slide_count():
+		var coll: KinematicCollision2D = body.get_slide_collision(i)
+		emit_signal("collide", coll.collider)
+		# TODO: Better instance check?
+		if kill_on_collide and "Player" in coll.collider.filename:
+			GameUtil.game.death()

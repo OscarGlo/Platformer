@@ -10,6 +10,9 @@ func init():
 	follow_constrained(Vector2.ZERO)
 
 func _process(delta):
+	if GameUtil.game == null:
+		return
+	
 	if GameUtil.game.mode == GameUtil.PLAY:
 		if follow:
 			follow_constrained(follow.position)
